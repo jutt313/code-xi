@@ -1,0 +1,351 @@
+/* Reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+}
+
+.App {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+/* Main container */
+.auth-container {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  padding: 40px;
+  max-width: 500px;
+  width: 100%;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Header */
+.auth-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.auth-header h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 10px;
+}
+
+.auth-header p {
+  color: #666;
+  font-size: 1.1rem;
+  font-weight: 300;
+}
+
+/* Forms container */
+.auth-forms {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.auth-form-container {
+  background: #f8f9fa;
+  border-radius: 15px;
+  padding: 30px;
+  border: 1px solid #e9ecef;
+}
+
+.auth-form-container h2 {
+  color: #333;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+/* Form styles */
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.input-group {
+  position: relative;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 15px 20px;
+  border: 2px solid #e9ecef;
+  border-radius: 10px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  background: white;
+}
+
+.input-group input:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+  transform: translateY(-2px);
+}
+
+.input-group input:disabled {
+  background: #f8f9fa;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+/* Buttons */
+.btn {
+  padding: 15px 30px;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+}
+
+.btn-primary:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+}
+
+.btn-secondary {
+  background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+  color: white;
+  box-shadow: 0 4px 15px rgba(40, 167, 69, 0.3);
+}
+
+.btn-secondary:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(40, 167, 69, 0.4);
+}
+
+.btn-copy {
+  background: linear-gradient(135deg, #17a2b8 0%, #6f42c1 100%);
+  color: white;
+  padding: 10px 20px;
+  font-size: 0.9rem;
+  margin-top: 10px;
+}
+
+.btn-copy:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 15px rgba(23, 162, 184, 0.3);
+}
+
+/* Divider */
+.divider {
+  text-align: center;
+  position: relative;
+  margin: 20px 0;
+}
+
+.divider::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: #e9ecef;
+}
+
+.divider span {
+  background: #f8f9fa;
+  padding: 0 20px;
+  color: #666;
+  font-weight: 500;
+  position: relative;
+  z-index: 1;
+}
+
+/* Messages */
+.message {
+  padding: 15px 20px;
+  border-radius: 10px;
+  margin: 20px 0;
+  font-weight: 500;
+  text-align: center;
+  animation: slideIn 0.3s ease;
+}
+
+.message.success {
+  background: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+}
+
+.message.error {
+  background: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+}
+
+/* Token container */
+.token-container {
+  background: #f8f9fa;
+  border-radius: 15px;
+  padding: 30px;
+  margin-top: 30px;
+  border: 1px solid #e9ecef;
+  animation: slideIn 0.5s ease;
+}
+
+.token-container h3 {
+  color: #28a745;
+  font-size: 1.3rem;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.token-container p {
+  color: #666;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.token-display {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.token-textarea {
+  width: 100%;
+  padding: 15px;
+  border: 2px solid #e9ecef;
+  border-radius: 10px;
+  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+  font-size: 0.9rem;
+  background: #2d3748;
+  color: #68d391;
+  resize: vertical;
+  min-height: 100px;
+}
+
+.token-textarea:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.next-steps {
+  margin-top: 25px;
+  padding: 20px;
+  background: white;
+  border-radius: 10px;
+  border: 1px solid #e9ecef;
+}
+
+.next-steps h4 {
+  color: #333;
+  margin-bottom: 15px;
+  font-size: 1.1rem;
+}
+
+.next-steps ol {
+  color: #666;
+  line-height: 1.6;
+  padding-left: 20px;
+}
+
+.next-steps code {
+  background: #f1f3f4;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+  font-size: 0.9rem;
+  color: #d63384;
+}
+
+/* Animations */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+  .auth-container {
+    padding: 20px;
+    margin: 10px;
+  }
+  
+  .auth-header h1 {
+    font-size: 2rem;
+  }
+  
+  .auth-form-container {
+    padding: 20px;
+  }
+  
+  .btn {
+    padding: 12px 25px;
+    font-size: 0.9rem;
+  }
+}
+
+/* Loading animation */
+.btn:disabled {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn:disabled::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
